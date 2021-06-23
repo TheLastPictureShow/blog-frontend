@@ -2,10 +2,11 @@ const Notification = ({ message }) => {
   let green = {
     color: "green",
     background: "lightgray",
-    fontSize: 18,
+    fontSize: 16,
     borderRadius: "5px",
-    padding: "10px",
+    padding: "5px",
     marginBottom: "10px",
+    marginTop: "10px",
     borderStyle: "solid",
   };
 

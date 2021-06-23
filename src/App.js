@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Blog from "./components/Blog";
 import LoginForm from "./components/LoginForm";
+import SignUp from "./components/SignUp";
 import CreateForm from "./components/CreateForm";
 import Togglable from "./components/Togglable";
 import blogService from "./services/blogs";
 import loginService from "./services/login";
+import "./App.css";
 
 const App = () => {
   const [blogs, setBlogs] = useState([]);
@@ -65,34 +67,47 @@ const App = () => {
 
   if (user === null) {
     return (
-      <LoginForm
-        handleLogin={handleLogin}
-        username={username}
-        setUsername={setUsername}
-        password={password}
-        setPassword={setPassword}
-        message={message}
-      />
+      <div className="app">
+        <div className="login-wrap">
+          <LoginForm
+            handleLogin={handleLogin}
+            username={username}
+            setUsername={setUsername}
+            password={password}
+            setPassword={setPassword}
+            message={message}
+          />
+        </div>
+        <div className="signup-wrap">
+          <SignUp />
+        </div>
+      </div>
     );
   }
 
   return (
-    <div>
-      <h2>Blogs</h2>
-      <span>{`${user.name} has logged in`}</span>{" "}
-      <button onClick={logout}>Logout</button>
-      <p> </p>
-      <Togglable buttonLabel="Create">
-        <CreateForm
-          blogs={blogs}
-          setBlogs={setBlogs}
-          message={message}
-          setMessage={setMessage}
-        />
-      </Togglable>
-      {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog} />
-      ))}
+    <div className="app">
+      <div className="upper">
+        <h2>Blogs</h2>
+        <span>{`Hello ${user.username}, you have logged in!`}</span>{" "}
+        <button className="btn" onClick={logout}>
+          Logout
+        </button>
+        <Togglable buttonLabel="Create">
+          <CreateForm
+            blogs={blogs}
+            setBlogs={setBlogs}
+            message={message}
+            setMessage={setMessage}
+          />
+        </Togglable>
+      </div>
+
+      <div className="lower">
+        {blogs.map((blog) => (
+          <Blog key={blog.id} blog={blog} />
+        ))}
+      </div>
     </div>
   );
 };

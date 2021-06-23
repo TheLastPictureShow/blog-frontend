@@ -61,8 +61,8 @@ const CreateForm = ({ blogs, setBlogs, message, setMessage }) => {
       </div>
       <p></p>
       <div>
-        <button id="submit" type="submit">
-          Create
+        <button className="btn" id="submit" type="submit">
+          Create New
         </button>
       </div>
     </form>

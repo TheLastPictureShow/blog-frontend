@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*  turns 1 rem into 10px (because 100% is 16px by default); */
+}
+
+.app {
+  max-width: 100vw;
+  font-family: Poppins;
+  font-size: 1.6rem;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+.upper {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.lower {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+}
+
+.login {
+  min-height: 50vh;
+  width: 100%;
+  background-color: lightskyblue;
+  font-size: 1.6rem;
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input {
+  display: grid;
+  justify-items: center;
+}
+
+input {
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid transparent;
+  height: 3rem;
+  padding: 1rem;
+  width: 95%;
+  font-size: 1.5rem;
+}
+
+.signup {
+  min-height: 50vh;
+  width: 100%;
+  background-color: cornsilk;
+  font-size: 1.6rem;
+  font-family: Poppins;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  border-radius: 50px;
+  width: 10rem;
+  height: 5rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background-color: lightskyblue;
+  color: black;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: cornflowerblue;
+}
+
+.btn:active {
+  border: none;
+  transform: translateY(3px);
+}
+
+.btn-login {
+  border-radius: 50px;
+  width: 10rem;
+  height: 5rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background-color: cornsilk;
+  color: black;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: cornflowerblue;
+}
+
+.btn-login:active {
+  border: none;
+  transform: translateY(3px);
+}
